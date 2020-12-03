@@ -1,0 +1,18 @@
+.keyboard{
+  background: peachpuff;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  border: 5px double saddlebrown;
+  border-radius: 15px
+}
+
+.keyboard-row{
+  width: 90%;
+  height: 250px;
+  margin-bottom: 0.5%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
