@@ -1,1 +1,6 @@
-<p>drink-keyboard works!</p>
+<div>
+  <div class = "keyboardRow" *ngFor="let buttonRow of buttons">
+    <app-drink-button [buttonEntity]="buttonRow[0]"></app-drink-button>
+    <app-drink-button [buttonEntity]="buttonRow[1]"></app-drink-button>
+  </div>
+</div>

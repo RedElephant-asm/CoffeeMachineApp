@@ -9,13 +9,15 @@ import { MachineComponent } from './machine/machine.component';
 import { DrinkKeyboardComponent } from './drink-keyboard/drink-keyboard.component';
 import { DrinkButtonComponent } from './drink-button/drink-button.component';
 import {HttpClientModule} from '@angular/common/http';
+import { AcceptOrderButtonComponent } from './accept-order-button/accept-order-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MachineComponent,
     DrinkKeyboardComponent,
-    DrinkButtonComponent
+    DrinkButtonComponent,
+    AcceptOrderButtonComponent
   ],
   imports: [
     BrowserModule,
