@@ -1,6 +1,6 @@
-<div>
-  <div class = "keyboardRow" *ngFor="let buttonRow of buttons">
-    <app-drink-button [buttonEntity]="buttonRow[0]"></app-drink-button>
-    <app-drink-button [buttonEntity]="buttonRow[1]"></app-drink-button>
+<div class="keyboard">
+  <div class = "keyboard-row" *ngFor="let buttonRow of buttons">
+    <app-drink-button [buttonEntity]="buttonRow[0]" (buttonSwitchedOn)="buttonSwitchedOn()"></app-drink-button>
+    <app-drink-button [buttonEntity]="buttonRow[1]" (buttonSwitchedOn)="buttonSwitchedOn()"></app-drink-button>
   </div>
 </div>

@@ -8,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MachineComponent implements OnInit {
 
-  titleText: string = "Title text here"
+  isKeyboardSwitchedOn: boolean = false
 
-  changeTitleText(event: any): void{
-    this.titleText = event.target.value
+  keyboardOn(){
+    setTimeout(() => {
+      this.isKeyboardSwitchedOn = true
+      console.log("Keyboard on !")
+    }, 500)
   }
 
   constructor() { }

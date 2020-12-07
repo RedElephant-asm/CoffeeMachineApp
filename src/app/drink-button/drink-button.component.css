@@ -1,10 +1,19 @@
-/*.button{*/
-/*  width: 24%;*/
-/*  height: 100%;*/
-/*  margin: 0.5%;*/
-/*  border-radius: 15px;*/
-/*  outline: none;*/
-/*  border-color: chocolate;*/
-/*  background-color: darkslategray;*/
-/*  color: peachpuff;*/
-/*}*/
+.drink-button{
+  margin-right: 25px;
+  float: left;
+  width: 150px;
+  height: 75px;
+}
+
+.drink-button img{
+  height: 50px;
+  width: 50px;
+  border: black;
+}
+
+.drink-button button{
+  vertical-align: middle;
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+}

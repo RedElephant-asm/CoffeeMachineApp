@@ -1,9 +1,10 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {DrinkButton} from '../drink-button/DrinkButton';
 import {DataRestService} from '../Services/DataRest/data-rest.service';
 import {strict} from 'assert';
 import {stringify} from 'querystring';
 import {Drink} from '../models/Drink';
+import {EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-drink-keyboard',
@@ -13,10 +14,19 @@ import {Drink} from '../models/Drink';
 })
 export class DrinkKeyboardComponent implements OnInit{
 
-  public buttons: Array<DrinkButton[]>
+  @Output() keyboardSwitchedOn = new EventEmitter<void>()
 
-  constructor(private dataService: DataRestService) {
+  public buttons: Array<DrinkButton[]>
+  public workingButtonCount: number = 0
+
+  constructor(private dataService: DataRestService) {}
+
+  public buttonSwitchedOn(){
+    this.workingButtonCount++
+    console.log(this.workingButtonCount + ' buttons works!')
+    if(this.workingButtonCount === 18){this.keyboardSwitchedOn.emit()}
   }
+
 
   ngOnInit(): Promise<void> {
     return this.dataService.getDrinks()
@@ -24,9 +34,10 @@ export class DrinkKeyboardComponent implements OnInit{
         this.buttons = new Array<DrinkButton[]>()
         for (let counter: number = 0; counter < 9; counter++){
           this.buttons[counter] = new Array<DrinkButton>()
-          this.buttons[counter].push(new DrinkButton(`assets/pictures/drinkButtons/drinkButton${counter * 2}.jpg`, restedData[counter * 2].name))
-          this.buttons[counter].push(new DrinkButton(`assets/pictures/drinkButtons/drinkButton${counter * 2 + 1}.jpg`, restedData[counter * 2 + 1].name))
+          this.buttons[counter].push(new DrinkButton(`assets/pictures/drinkButtons/drinkButton${counter * 2}.jpg`, restedData[counter * 2].name, restedData[counter * 2].id))
+          this.buttons[counter].push(new DrinkButton(`assets/pictures/drinkButtons/drinkButton${counter * 2 + 1}.jpg`, restedData[counter * 2 + 1].name,  restedData[counter * 2 + 1].id))
         }
+
       })
   }
 }
