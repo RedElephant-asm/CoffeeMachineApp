@@ -14,7 +14,7 @@
   border: black 1px dashed;
 }
 
-.drink-button button{
+.button{
   vertical-align: middle;
   height: 50px;
   width: 100px;
@@ -26,5 +26,12 @@
 }
 
 .button-disabled{
-  color: crimson;
+  vertical-align: middle;
+  height: 50px;
+  width: 100px;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  outline: none;
+  background-color: crimson;
+  color: black;
 }

@@ -1,4 +1,5 @@
 <span class="drink-button">
   <img [src]="buttonEntity.drinkPictureUrl">
-  <button [disabled]="isDisabled" (click)="onButtonClick()">{{buttonEntity.drinkButtonName}}</button>
+  <button [disabled]="getButtonSatatus()" (click)="onButtonClick()"
+          [ngClass]="getButtonSatatus() ? 'button-disabled' : 'button'">{{buttonEntity.drinkButtonName}}</button>
 </span>

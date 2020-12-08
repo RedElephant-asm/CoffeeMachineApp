@@ -15,6 +15,7 @@ export class AcceptOrderButtonComponent implements OnInit {
   confirmOrder(): void{
     if(this.orderService.currentOrder) {
       this.orderService.isOrderConfirmed = true
+      this.orderService.isLastPossibleOrder = this.orderService.isLastPossibleOrder && true
       this.orderService.currentOrder.portionCount--
       this.dataService.updateDrink(this.orderService.currentOrder)
     }

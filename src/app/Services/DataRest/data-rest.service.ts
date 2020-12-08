@@ -41,6 +41,6 @@ export class DataRestService {
       'name': drink.name,
       'portionCount': drink.portionCount,
       'price': drink.price
-    }, {headers}).subscribe(data=>console.log(data));
+    }, {headers}).subscribe(data=>{});
   }
 }
