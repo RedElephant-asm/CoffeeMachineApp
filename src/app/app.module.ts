@@ -10,6 +10,7 @@ import { DrinkKeyboardComponent } from './drink-keyboard/drink-keyboard.componen
 import { DrinkButtonComponent } from './drink-button/drink-button.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AcceptOrderButtonComponent } from './accept-order-button/accept-order-button.component';
+import { OrderStandComponent } from './order-stand/order-stand.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AcceptOrderButtonComponent } from './accept-order-button/accept-order-b
     MachineComponent,
     DrinkKeyboardComponent,
     DrinkButtonComponent,
-    AcceptOrderButtonComponent
+    AcceptOrderButtonComponent,
+    OrderStandComponent
   ],
   imports: [
     BrowserModule,

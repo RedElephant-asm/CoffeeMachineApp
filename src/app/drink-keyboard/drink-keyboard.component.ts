@@ -23,7 +23,6 @@ export class DrinkKeyboardComponent implements OnInit{
 
   public buttonSwitchedOn(){
     this.workingButtonCount++
-    console.log(this.workingButtonCount + ' buttons works!')
     if(this.workingButtonCount === 18){this.keyboardSwitchedOn.emit()}
   }
 

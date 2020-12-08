@@ -1,5 +1,11 @@
 .machine{
-
+  position: absolute;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 20%;
+  border: 3px black double;
+  background-color: bisque;
+  border-radius: 10px;
 }
 
 .machine-hidden{

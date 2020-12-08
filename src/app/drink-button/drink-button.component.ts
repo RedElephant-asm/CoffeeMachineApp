@@ -1,6 +1,7 @@
 import {AfterContentInit, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {DrinkButton} from './DrinkButton';
 import {DataRestService} from '../Services/DataRest/data-rest.service';
+import {OrderService} from '../Services/TransportServices/orderService/order.service';
 
 @Component({
   selector: 'app-drink-button',
@@ -15,16 +16,25 @@ export class DrinkButtonComponent implements OnInit, AfterContentInit{
 
   isDisabled: boolean = false
 
-  constructor(private http: DataRestService) {}
+  constructor(private dataService: DataRestService, private orderService: OrderService) {}
 
   disableIfEmpty(): void{
-    this.http.getDrinkById(this.buttonEntity.drinkId)
+    this.dataService.getDrinkById(this.buttonEntity.drinkId)
       .then(drink => {
         if(drink.portionCount <= 0){
           this.isDisabled = true
         }
         this.buttonSwitchedOn.emit()
       })
+  }
+
+  onButtonClick() : void{
+    this.doOrder()
+  }
+
+  doOrder() : void{
+    this.orderService.regOrder(this.buttonEntity.drinkId)
+    this.orderService.isOrderConfirmed = false
   }
 
   ngOnInit(): void {

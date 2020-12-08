@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {OrderService} from '../Services/TransportServices/orderService/order.service';
+import {Drink} from '../models/Drink';
+import {DataRestService} from '../Services/DataRest/data-rest.service';
 
 @Component({
   selector: 'app-accept-order-button',
@@ -7,7 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcceptOrderButtonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private orderService: OrderService, private dataService: DataRestService) {}
+
+  confirmOrder(): void{
+    if(this.orderService.currentOrder) {
+      this.orderService.isOrderConfirmed = true
+      this.orderService.currentOrder.portionCount--
+      this.dataService.updateDrink(this.orderService.currentOrder)
+    }
+  }
+
+  getCurrentOrderName(): string{
+    if(this.orderService.currentOrder){
+      return `Your order : ${this.orderService.currentOrder.name}`
+    } else return 'Your order here'
+  }
+
+  getCurrentOrderPrice(){
+    if(this.orderService.currentOrder){
+      return `Price of your order : ${this.orderService.currentOrder.price}`
+    } else return 'Price of your order here'
+  }
 
   ngOnInit(): void {
   }

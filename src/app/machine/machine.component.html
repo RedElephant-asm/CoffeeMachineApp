@@ -1,3 +1,5 @@
 <div class="machine" [ngClass]="isKeyboardSwitchedOn ? 'machine' : 'machine-hidden'">
   <app-drink-keyboard (keyboardSwitchedOn)="keyboardOn()" class="keyboard"></app-drink-keyboard>
+  <app-accept-order-button></app-accept-order-button>
+  <app-order-stand></app-order-stand>
 </div>

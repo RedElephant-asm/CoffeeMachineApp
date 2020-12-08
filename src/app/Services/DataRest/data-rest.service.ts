@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Drink} from '../../models/Drink';
 import {Subscription} from 'rxjs';
 
@@ -19,7 +19,7 @@ export class DataRestService {
       setTimeout(() => {
         sub.unsubscribe()
         resolve(restedData)
-      }, 500)
+      }, 1000)
     })
   }
 
@@ -30,7 +30,17 @@ export class DataRestService {
       setTimeout(() => {
         sub.unsubscribe()
         resolve(restedData)
-      }, 500)
+      }, 1000)
     })
+  }
+
+  public updateDrink(drink: Drink): void{
+    let headers: HttpHeaders = new HttpHeaders().set('Content-Type', 'application/json')
+    this.http.put(this.url, {
+      'id': drink.id,
+      'name': drink.name,
+      'portionCount': drink.portionCount,
+      'price': drink.price
+    }, {headers}).subscribe(data=>console.log(data));
   }
 }

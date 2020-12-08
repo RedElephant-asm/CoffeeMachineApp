@@ -1,1 +1,7 @@
-<p>accept-order-button works!</p>
+<div class="accept-order-button">
+  <label>{{getCurrentOrderName()}}</label>
+  <br>
+  <label>{{getCurrentOrderPrice()}}</label>
+  <br>
+  <button (click)="confirmOrder()">Confirm order</button>
+</div>

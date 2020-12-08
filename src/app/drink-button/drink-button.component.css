@@ -1,19 +1,30 @@
 .drink-button{
-  margin-right: 25px;
-  float: left;
-  width: 150px;
+  position: relative;
+  margin-right: 5%;
+  margin-left: 5%;
+  width: 40%;
   height: 75px;
+  border-radius: 10px;
 }
 
 .drink-button img{
   height: 50px;
   width: 50px;
-  border: black;
+  border-radius: 5px;
+  border: black 1px dashed;
 }
 
 .drink-button button{
   vertical-align: middle;
   height: 50px;
-  width: 50px;
-  margin-left: 10px;
+  width: 100px;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  outline: none;
+  background-color: black;
+  color: bisque;
+}
+
+.button-disabled{
+  color: crimson;
 }
