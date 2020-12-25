@@ -14,7 +14,7 @@ import {EventEmitter} from '@angular/core';
 })
 export class DrinkKeyboardComponent implements OnInit{
 
-  @Output() keyboardSwitchedOn = new EventEmitter<void>()
+  @Output() keyboardSwitchedOn: EventEmitter<void> = new EventEmitter<void>()
 
   public buttons: Array<DrinkButton[]>
   public workingButtonCount: number = 0

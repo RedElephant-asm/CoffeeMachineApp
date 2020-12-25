@@ -10,7 +10,7 @@ export class MachineComponent implements OnInit {
 
   isKeyboardSwitchedOn: boolean = false
 
-  keyboardOn(){
+  keyboardOn(): void{
     setTimeout(() => {
       this.isKeyboardSwitchedOn = true
       console.log("Keyboard on !")

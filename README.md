@@ -1,6 +1,11 @@
 # CoffeeMachineApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.</br>
+Проект предназначен для имитации работы кофейного аппарата
+
+## Связь с backend-частью
+Приложение получает данные у REST-сервиса, который расположен по адресу 
+`http://localhost:8080`
 
 ## Development server
 

@@ -27,7 +27,7 @@ export class AcceptOrderButtonComponent implements OnInit {
     } else return 'Your order here'
   }
 
-  getCurrentOrderPrice(){
+  getCurrentOrderPrice(): string{
     if(this.orderService.currentOrder){
       return `Price of your order : ${this.orderService.currentOrder.price}`
     } else return 'Price of your order here'
